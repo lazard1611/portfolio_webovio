@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkglivera_webpack_template=self.webpackChunkglivera_webpack_template||[]).push([[250],{250:(e,l,a)=>{a.r(l),a.d(l,{default:()=>t});const t=function(){console.log("hello")}}}]);

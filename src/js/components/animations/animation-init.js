@@ -194,7 +194,7 @@ const animationInit = (
 			trigger: section.$section,
 			start: 'top 65%',
 			end: 'bottom center',
-			markers: true,
+			markers: false,
 			animation: tl,
 		});
 

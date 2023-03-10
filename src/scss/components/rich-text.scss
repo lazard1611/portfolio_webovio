@@ -1,0 +1,124 @@
+@import "link";
+
+.rich_text {
+	color: $olive_1;
+
+	&.rich_text--mod {
+		color: $white;
+	}
+
+	.article & {
+		height: 100%;
+		@include flex_block(column, nowrap, stretch, stretch);
+	}
+}
+
+.rich_text__subtitle {
+	font-size: 1.4rem;
+	line-height: 1.5;
+
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-bottom: 2.2rem;
+		}
+	}
+
+	@include bp($point_3) {
+		&:not(:last-child) {
+			margin-bottom: 1.6rem;
+		}
+	}
+}
+
+.rich_text__hero_title {
+	@include h1;
+	overflow: hidden;
+
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-bottom: 2.4rem;
+		}
+	}
+
+	@include bp($point_3) {
+		&:not(:last-child) {
+			margin-bottom: 1.6rem;
+		}
+	}
+
+	.split-line {
+		overflow: hidden;
+	}
+}
+
+.rich_text__title {
+	@include h2;
+	overflow: hidden;
+
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-bottom: 3.4rem;
+		}
+	}
+
+	@include bp($point_3) {
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+
+	.article & {
+		@include bp($point_2, min) {
+			max-width: 47.5rem;
+		}
+	}
+
+	.split-line {
+		overflow: hidden;
+	}
+}
+
+.rich_text__title .decor_text {
+	position: relative;
+	overflow: hidden;
+	display: inline-flex;
+}
+
+.decor_text_in {
+	z-index: -1;
+	position: absolute;
+	background: rgba(255, 215, 35, 0.1);
+	//background: tomato;
+	width: 100%;
+	height: 100%;
+}
+
+.rich_text__description {
+	color: $blue_3;
+	@include text;
+
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-bottom: 5rem;
+		}
+	}
+
+	@include bp($point_3) {
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+	.hero & {
+		color: $white;
+	}
+
+	.article & {
+		@include bp($point_2, min) {
+			max-width: 42.1rem;
+		}
+	}
+
+	p:not(:last-child) {
+		margin: 0 0 2.7rem 0;
+	}
+}

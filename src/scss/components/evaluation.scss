@@ -1,0 +1,135 @@
+@import "ScssHelpers/helpers-all.scss";
+
+.evaluation {
+	@include bp($point_2, min) {
+		padding: 15rem var(--gl-indent) 11rem;
+
+		&:after {
+			width: $page_width;
+		}
+	}
+
+	@include bp($point_3) {
+		padding: 4rem var(--gl-indent);
+
+		&:after {
+			width: calc(100% - var(--gl-indent) * 2);
+		}
+	}
+
+	&:after {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+
+		display: block;
+		height: 1px;
+		background-color: rgba(33, 56, 66, 0.095);
+
+		content: "";
+	}
+}
+
+.evaluation__title {
+	@include h2;
+	max-width: 60.6rem;
+
+	color: $olive_1;
+
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-bottom: 5.6rem;
+		}
+	}
+
+	@include bp($point_3) {
+		&:not(:last-child) {
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.evaluation__container {
+	@include bp($point_2, min) {
+		padding: 3rem;
+	}
+}
+
+.evaluation__list {
+	@include bp($point_2, min) {
+		@include flex_block(row, wrap, flex-start, stretch);
+		margin: 0 -9.1rem -4rem 0;
+	}
+
+	@include bp($point_3, $point_4) {
+		@include flex_block(row, wrap, flex-start, stretch);
+		margin: 0 -4rem -4rem 0;
+	}
+}
+
+.evaluation__item {
+	@include bp($point_2, min) {
+		width: 25%;
+		padding: 0 9.1rem 4rem 0;
+	}
+
+	@include bp($point_3, $point_4) {
+		width: 50%;
+		padding: 0 4rem 4rem 0;
+	}
+
+	@include bp($point_4 - 1) {
+		&:not(:last-child) {
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.evaluation__item_in {
+	@include bp($point_4, min) {
+		@include flex_block(column, wrap, flex-start, flex-start);
+		height: 100%;
+	}
+}
+
+.evaluation__item_title {
+	line-height: 1.42;
+	font-weight: 500;
+	text-transform: uppercase;
+
+	color: $olive_1;
+
+	@include bp($point_2, min) {
+		font-size: 2.4rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.8rem;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+}
+
+.evaluation__item_description {
+	flex: auto;
+
+	font-size: 1.4rem;
+	line-height: 1.86;
+
+	color: rgba(33, 56, 66, 0.6);
+
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-bottom: 3.5rem;
+		}
+	}
+
+	@include bp($point_3) {
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+}

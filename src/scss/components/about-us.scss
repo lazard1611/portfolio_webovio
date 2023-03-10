@@ -1,0 +1,46 @@
+@import "ScssHelpers/helpers-all.scss";
+
+.about_us {
+	@include bp($point_2, min) {
+		padding: 0 0 13.9rem 0;
+	}
+
+	@include bp($point_3) {
+		padding: 4rem var(--gl-indent) 4rem;
+	}
+}
+
+.about_us__in {
+	@include bp($point_2, min) {
+		@include flex_block(row, nowrap, space-between, flex-end);
+	}
+
+	@include bp($point_3) {
+		@include flex_block(column, nowrap, flex-start, stretch);
+	}
+}
+
+.about_us__col {
+
+	&:nth-child(1) {
+		
+		@include bp($point_2, min) {
+			max-width: 49.5rem;
+			padding: 2.8rem 2rem 2.8rem 0;
+		}
+
+		@include bp($point_3) {
+			max-width: 100%;
+		}
+	}
+
+	&:nth-child(2) {
+		flex-shrink: 0;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_3) {
+			margin: 0 0 4rem 0;
+		}
+	}
+}

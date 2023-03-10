@@ -1,0 +1,20 @@
+include ../templates/mixins/m-rich-text
+include ../templates/global-mixins
+
+section.section.hero.js-hero
+	.section_in
+		+picture({
+			img: img_bg,
+			class: 'hero__bg js-bg-fade',
+			img_class: 'hero__bg_img js-img-parallax',
+			alt: 'Hero img'
+		})
+		.hero__row
+			.hero__col
+				+rich_text({
+					mod: true,
+					subtitle: subtitle,
+					hero_title: hero_title,
+					description: description,
+					link: link,
+				})

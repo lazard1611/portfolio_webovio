@@ -1,0 +1,4 @@
+@include font_face('Poppins-Regular', 'Poppins', $font_path, 400);
+@include font_face('Poppins-Bold', 'Poppins', $font_path, 700);
+@include font_face('Poppins-Italic', 'Poppins', $font_path, 400, italic);
+@include font_face('Poppins-Medium', 'Poppins', $font_path, 500);

@@ -1,0 +1,24 @@
+include ../templates/global-mixins
+include ../templates/mixins/m-rich-text
+include ../templates/mixins/m-feedback-card
+include ../templates/mixins/m-article
+
+section.section.awesome
+	.section_in.awesome__in
+		.awesome__head.js-fade-trigger
+			h2.awesome__title.js-quote!= title
+			p.awesome__head_text.js-description-fade!= head_text
+	ul.awesome_articles
+		each item in articles
+			li.awesome_articles__item
+				+article({
+					img: item.img,
+					title: item.title,
+					text: item.text,
+					link: item.link,
+					card_text: item.card_text,
+					card_img: item.card_img,
+					card_name: item.card_name,
+					card_post: item.card_post,
+				})
+

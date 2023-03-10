@@ -1,0 +1,150 @@
+@import "ScssHelpers/helpers-all.scss";
+
+.article {
+
+	@include bp($point_2, min) {
+		padding: 0 0 6.5rem 0;
+	}
+
+	.awesome_articles__item:nth-child(odd) & {
+		@include flex_block(row, wrap, flex-start, stretch);
+	}
+
+	.awesome_articles__item:nth-child(even) & {
+
+		@include bp($point_2, min) {
+			@include flex_block(row-reverse, wrap, flex-start, stretch);
+		}
+
+		@include bp($point_3) {
+			@include flex_block(row, wrap, flex-start, stretch);
+		}
+	}
+
+}
+
+.article__col {
+	@include bp($point_3) {
+		width: 100%;
+	}
+
+	&:nth-child(1) {
+		position: relative;
+
+		@include bp($point_3) {
+			margin: 0 0 4rem 0;
+			order: 1;
+
+			@include flex_block(column, wrap, flex-start, stretch);
+		}
+
+		@include bp($point_3, $point_5) {
+			padding: 0 4rem 4rem 0;
+		}
+	}
+
+	&:nth-child(2) {
+
+		@include flex_block(column, nowrap, stretch, stretch);
+
+		@include bp($point_2, min) {
+			padding: 8.4rem 0 7.5rem 0;
+		}
+
+		@include bp($point_3) {
+			order: 2;
+		}
+	}
+
+	.awesome_articles__item:nth-child(odd) &:nth-child(1) {
+		@include bp($point_2, min) {
+			margin: 0 9.7rem 0 0;
+		}
+
+		@include bp($point_3) {
+			//margin: 0;
+		}
+	}
+
+	.awesome_articles__item:nth-child(even) &:nth-child(1) {
+		@include bp($point_2, min) {
+			margin: 0 0 0 11.3rem;
+		}
+
+		@include bp($point_3) {
+			//margin: 0;
+		}
+	}
+
+	&:nth-child(2) {
+		max-width: 47.5rem;
+	}
+}
+
+.article__img_w {
+	position: relative;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+
+	@include bp($point_2, min) {
+		max-width: 73.5rem;
+		height: 55rem;
+	}
+
+	@include bp($point_3) {
+		width: 100%;
+		height: auto
+	}
+}
+
+.article__img {
+	@include cover_img;
+
+	@include bp($point_2, min) {
+		height: 120%;
+	}
+}
+
+.article__card_block {
+
+	@include bp($point_2, min) {
+		bottom: -6.7rem;
+	}
+
+	@include bp($point_3) {
+		bottom: 0;
+	}
+
+	@include bp($point_5, min) {
+		position: absolute;
+		z-index: 2;
+	}
+
+	@include bp($point_5 - 1) {
+		position: static;
+	}
+
+	.awesome_articles__item:nth-child(odd) & {
+		@include bp($point_2, min) {
+			right: -4rem;
+		}
+
+		@include bp($point_3) {
+			right: 0;
+		}
+	}
+
+	.awesome_articles__item:nth-child(even) & {
+
+		@include bp($point_2, min) {
+			left: -4rem;
+		}
+
+		@include bp($point_3) {
+			right: 0;
+		}
+	}
+
+
+}

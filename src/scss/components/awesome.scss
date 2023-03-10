@@ -1,0 +1,66 @@
+@import "ScssHelpers/helpers-all.scss";
+
+.awesome {
+	@include bp($point_2, min) {
+		padding: 9.1rem 0 12.4rem 0;
+	}
+
+	@include bp($point_3) {
+		padding: 4rem var(--gl-indent);
+	}
+}
+
+.awesome__in {
+	
+	@include bp($point_2, min) {
+		margin: 0 auto 10.5rem auto;
+	}
+
+	@include bp($point_3) {
+		margin: 0 auto 6rem auto;
+	}
+}
+
+.awesome__head {
+	@include flex_block(row, wrap, flex-start, center);
+}
+
+.awesome__title {
+	max-width: 33.1rem;
+	color: $olive_1;
+	@include h2;
+	
+	@include bp($point_2, min) {
+		margin: 0 12.7rem 0 0;
+		line-height: 1.45;
+	}
+
+	@include bp($point_3) {
+		margin: 0 0 1.5rem 0;
+	}
+}
+
+.awesome__head_text {
+	color: $blue_3;
+	@include text;
+	
+	@include bp($point_2, min) {
+		max-width: 51.8rem;
+	}
+}
+
+.awesome_articles {
+	@include flex_block(column, nowrap, flex-start, stretch);
+}
+
+.awesome_articles__item {
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin: 0 0 10rem 0;
+		}
+
+		@include bp($point_3) {
+			margin: 0 0 5rem 0;
+		}
+	}
+}

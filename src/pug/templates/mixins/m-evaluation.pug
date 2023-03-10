@@ -1,0 +1,14 @@
+include ./m-link
+
+mixin evaluation(data)
+	section.section.evaluation.js-fade-trigger
+		.section_in
+			h2.evaluation__title.js-fade-item!= data.title
+			.evaluation__container
+				ul.evaluation__list
+					each item in data.list
+						li.evaluation__item.js-fade-item
+							.evaluation__item_in
+								.evaluation__item_title!= item.title
+								.evaluation__item_description!= item.description
+								+link('Read More')

@@ -1,0 +1,17 @@
+.form_textarea__label {
+	@include form_el_label;
+}
+
+.form_textarea__element {
+	@include form_el_default;
+
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	height: 15rem;
+	border: 1px solid $gray;
+
+	&:hover,
+	&:focus {
+		border-color: $olive_1;
+	}
+}

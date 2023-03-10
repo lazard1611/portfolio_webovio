@@ -1,0 +1,44 @@
+footer.footer
+	+picture({
+		img: global.footerArray.bg_img,
+		class: 'footer__bg',
+		img_class: 'footer__bg_img',
+		alt: 'footer bg',
+	})
+	.footer__in
+		.footer__top
+			if global.footerArray.info
+				.footer__info
+					each item in global.footerArray.info
+						.footer__info_item
+							.footer__info_heading!= item.title
+							if item.link
+								a.footer__info_link(href=item.href)!= item.link
+							if item.descr
+								.footer__info_descr!= item.descr
+		.footer__menu
+			if global.footerArray.nav
+				nav.footer__nav
+					ul.footer__nav_list
+						each menu in global.footerArray.nav
+							li.footer__nav_item
+								.footer__nav_title!= menu.title
+								ul.footer__list
+									each item in menu.items
+										li.footer__item
+											a.footer__link(href=item.href)!= item.title
+			.footer__touch
+				.footer__touch_title!= global.footerArray.touch_title
+				.footer__touch_text!= global.footerArray.touch_text
+				a.footer__touch_email(href=global.footerArray.touch_text.href)!= global.footerArray.touch_email.link
+				.footer__social
+					ul.footer__social_list
+						each item in global.footerArray.socials
+							li.footer__social_item
+								a.footer__social_link(href=item.href)
+									+icon( item.icon, 'icon--size_mod')
+		.footer__bottom
+			if global.footerArray.logo
+				a.footer__logo(href="#")
+					img.footer__logo_img(src=`images/${global.footerArray.logo}`, alt="logo")
+			.footer__reserved!= global.footerArray.copyright

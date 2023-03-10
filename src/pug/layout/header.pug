@@ -1,0 +1,13 @@
+header.header.js-header
+	.header__in.section_in
+		.header__wrap
+			a.header__logo.js-fade-item(href='#')
+				+icon(global.headerArray.logo, 'icon--size_mod')
+			nav.header__nav.js-header-nav
+				if global.headerArray.nav
+					ul.header__nav_list
+						each item in global.headerArray.nav
+							li.header__nav_item.js-fade-item
+								a.header__nav_link.js-header-link(href=item.href data-goto=item.id)!= item.title
+			.header__burger.js-header-burger.js-fade-item
+				span.header__burger_decor

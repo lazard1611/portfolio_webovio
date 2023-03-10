@@ -1,0 +1,117 @@
+@import "family";
+@import "reset";
+@import "fonts";
+@import "print";
+
+//------------------------------------------------------------base styles
+:root {
+	--full-screen: calc(var(--vh, 1vh) * 100);
+
+	--height-header: 8.5rem;
+	--height-footer: 92rem;
+
+	@include bp($point_2, min) {
+		--gl-indent: 5rem;
+	}
+
+	@include bp($point_3) {
+		--gl-indent: 2rem;
+	}
+}
+
+html {
+	height: 100%;
+	font-style: normal;
+
+	@include bp($point_2, min) {
+		font: calc(100vw / 1440 * 10) / 1.33 $font_1;
+	}
+
+	@include bp($point_3, $point_7) {
+		font: 10px/1.33 $font_1;
+	}
+
+	@include bp($point_7 - 1) {
+		font: calc(100vw / 375 * 10) / 1.33 $font_1;
+	}
+}
+
+body {
+	position: relative;
+
+	display: flex;
+	height: 100%;
+
+	font-size: $font_size_base;
+	color: $color_text_base;
+
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	opacity: 0;
+	background: $body_bg;
+
+	&.body--open_menu {
+		overflow: hidden;
+	}
+
+	&.body--loaded {
+		opacity: 1;
+	}
+
+	@supports (display: grid) {
+		display: block;
+	}
+}
+
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: $white;
+
+	opacity: 1;
+	transition: opacity 0.3s;
+
+	z-index: 1000;
+
+	.body--loaded & {
+		pointer-events: none;
+		opacity: 0;
+	}
+}
+
+.wrapper_in {
+	position: relative;
+
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	height: auto !important;
+
+	overflow-x: hidden;
+}
+
+.base {
+	width: 100%;
+	position: relative;
+	// padding: var(--height-header) 0 0;
+
+	flex: 1 0 auto;
+}
+
+a {
+	text-decoration: none;
+	color: $color_link_base;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+//------------------------------------------------------------base styles###

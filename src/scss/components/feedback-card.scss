@@ -1,0 +1,130 @@
+@import "ScssHelpers/helpers-all.scss";
+
+.feedback_card {
+	width: 100%;
+	padding: 3.2rem 3rem 3rem 3rem;
+
+	background-color: $white;
+	box-shadow: 5rem 5rem 10rem rgba(0, 0, 0, 0.145947);
+	@include flex_block(column, nowrap, flex-start);
+	
+	@include bp($point_5, min) {
+		max-width: 45.3rem;
+		border-radius: .8rem;
+	}
+
+	@include bp($point_5) {
+		border-radius: 0 0 .8rem .8rem;
+	}
+	
+	&.feedback_card--size_mod {
+		border-radius: 0;
+		@include bp($point_2, min) {
+			padding: 11.9rem 5.4rem 6rem 4rem;
+			max-width: 49rem;
+			box-shadow: 0 10rem 10rem rgba(0, 0, 0, 0.145947);
+		}
+		
+		@include bp($point_3) {
+			max-width: 100%;
+			padding: 4rem var(--gl-indent);
+			box-shadow: 0 1rem 7rem rgba(0, 0, 0, 0.145947);
+		}
+	}
+}
+
+.feedback_card__text {
+	color: $olive_1;
+	font-style: italic;
+	@include text;
+
+	&:not(:last-child) {
+		
+		@include bp($point_2, min) {
+			margin: 0 0 2.9rem 0;
+		}
+
+		@include bp($point_3) {
+			margin: 0 0 2rem 0;
+		}
+	}
+
+	.feedback_card--size_mod &:not(:last-child) {
+		
+		@include bp($point_2, min) {
+			margin: 0 0 5rem 0;
+		}
+
+		@include bp($point_3) {
+			margin: 0 0 3rem 0;
+		}
+	}
+
+	.feedback_card--size_mod & {
+		@include h5;
+		
+		@include bp($point_2, min) {
+			max-width: 38rem;
+		}
+
+		@include bp($point_3) {
+			max-width: 100%;
+		}
+	} 
+}
+
+.feedback_card__bottom {
+	@include flex_block(row, nowrap, flex-start, center);
+}
+
+.feedback_card__image_w {
+	display: block;
+	width: 4.6rem;
+	height: 4.6rem;
+	margin: 0 1.4rem 0 0;
+	flex-shrink: 0;
+	
+	border-radius: 50%;
+	box-shadow: 2rem 2.5rem 4.3rem rgba(0, 0, 0, 0.18);
+	overflow: hidden;
+	
+	.feedback_card--size_mod & {
+		margin: 0 3rem 0 0;
+		width: 9rem;
+		height: 9rem;
+	}
+}
+
+.feedback_card__image {
+	@include contain_img;
+}
+
+.feedback_card__name {
+	color: $olive_1;
+	
+	font-weight: 700;
+	@include text;
+
+	&:not(:last-child) {
+		margin: 0 0 .3rem 0;
+	}
+
+	.feedback_card--size_mod &:not(:last-child) {
+		margin: 0 0 .6rem 0;
+	}
+	
+	.feedback_card--size_mod & {
+		line-height: 3.3rem;
+		@include h3;
+	}
+}
+
+.feedback_card__post {
+	color: $blue_2;
+	font-size: 1.4rem;
+	line-height: 2.1rem;
+	
+	.feedback_card--size_mod & {
+		@include text;
+	}
+}

@@ -1,0 +1,20 @@
+include ../templates/global-mixins
+include ../templates/mixins/m-link
+
+section.section.get_started.js-fade-trigger
+	.section_in
+		.get_started__block
+			.get_started__title.js-quote!= title
+			form.get_started__form.js-fade-item(action="" method="POST")
+				+form_input({
+					block_class: 'get_started__form_input',
+					field_class: 'get_started__form_input_field',
+					type: 'text',
+					placeholder: 'E-mail'
+				})
+				+form_textarea({
+					mod: 'get_started__form_textarea',
+					placeholder: 'Tell us about your project'
+				})
+				button.btn_base(href="#" type='submit') Send message
+			+link(link)

@@ -1,0 +1,14 @@
+include ./m-link
+
+mixin rich_text(data)
+	.rich_text(class=`${data.mod ? 'rich_text--mod' : ''}`)
+		if data.subtitle
+			.rich_text__subtitle.js-subtitle-fade!= data.subtitle
+		if data.hero_title
+			h1.rich_text__hero_title.js-quote!= data.hero_title
+		if data.title
+			h2.rich_text__title.js-quote!= data.title
+		if data.description
+			.rich_text__description.js-description-fade!= data.description
+		if data.link
+			+link(data.link)

@@ -1,0 +1,25 @@
+mixin article(data)
+	.article.js-fade-trigger
+		.article__col
+			if data.img
+				+picture({
+					img: data.img,
+					alt: 'project',
+					class: 'article__img_w js-fade-item',
+					img_class: 'article__img js-img-parallax',
+				})
+			.article__card_block.js-fade-item
+				+feedback_card({
+					mod: 'js-parallax-item',
+					image: data.card_img,
+					text: data.card_text,
+					name: data.card_name,
+					post: data.card_post,
+				})
+		.article__col
+			+rich_text({
+				mod: false,
+				title: data.title,
+				description: data.text,
+				link: data.link,
+			})

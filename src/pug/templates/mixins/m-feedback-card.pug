@@ -1,0 +1,16 @@
+mixin feedback_card(data)
+	.feedback_card(class=`${data.mod ? data.mod : ''}` data-parallax_speed='80')
+		if data.text
+			.feedback_card__text!= data.text
+		.feedback_card__bottom
+			if data.image
+				+picture({
+					img: data.image,
+					alt: 'author',
+					class: 'feedback_card__image_w',
+					img_class: 'feedback_card__image',
+				})
+			if data.name
+				.feedback_card__author
+					.feedback_card__name!= data.name
+					.feedback_card__post!= data.post

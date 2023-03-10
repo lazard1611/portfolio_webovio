@@ -1,0 +1,58 @@
+@import "ScssHelpers/helpers-all.scss";
+
+.get_started {
+	z-index: 1;
+	padding: 0;
+	background-color: $gray_3;
+
+	@include bp($point_2, min) {
+		width: 88.6%;
+
+		padding: 7.2rem 16.6rem;
+		margin-bottom: -26rem;
+	}
+
+	@include bp($point_3) {
+		padding: 7rem var(--gl-indent);
+	}
+}
+
+.get_started__block {
+	width: 100%;
+}
+
+.get_started__title {
+	color: $olive_1;
+
+	@include h1;
+
+	@include bp($point_2, min) {
+		width: 80%;
+		margin-bottom: 5rem;
+	}
+
+	@include bp($point_3) {
+		width: 100%;
+		margin-bottom: 4rem;
+	}
+}
+
+.get_started__form {
+	@include bp($point_2, min) {
+		width: 80%;
+		margin-bottom: 5rem;
+	}
+
+	@include bp($point_3) {
+		width: 100%;
+		margin-bottom: 4rem;
+	}
+}
+
+.get_started__form_input {
+	margin-bottom: 3rem;
+}
+
+.get_started__form_textarea {
+	margin-bottom: 4rem;
+}

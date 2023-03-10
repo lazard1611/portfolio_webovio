@@ -1,0 +1,183 @@
+//------------------------------------------------------------layout
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	height: var(--height-header);
+	width: 100%;
+	padding: 0 var(--gl-indent);
+
+	font-size: 1rem;
+
+	will-change: transform;
+
+	@include z-index(header);
+}
+
+//------------------------------------------------------------layout###
+
+.header {
+	&.header--scroll_state {
+		box-shadow: 0 1px 4px rgba($black, 0.2);
+		background-color: $olive_3;
+	}
+
+	@include transition_background;
+}
+
+.header__in {
+	height: 100%;
+}
+
+.header__wrap {
+	height: 100%;
+
+	@include flex_block(row, nowrap, flex-start, center);
+}
+
+.header__logo {
+	height: 4rem;
+
+	color: $white;
+
+	@include bp($point_4, min) {
+		width: 25.8rem;
+	}
+
+	@include bp($point_4 - 1) {
+		width: 18.5rem;
+	}
+}
+
+.header__nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: var(--full-screen);
+	padding: 0 var(--gl-indent);
+
+	background-color: rgba($white, 0.95);
+
+	overflow-y: auto;
+
+	body:not(.body--open_menu) & {
+		transform: translateY(-110%);
+	}
+
+	@include flex_block(row, nowrap, flex-start, center);
+	@include transition_transform;
+}
+
+.header__nav_list {
+	margin: auto;
+	padding: 4rem 0;
+}
+
+.header__nav_item {
+	font-size: 2.4rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	text-align: center;
+
+	&:not(:last-child) {
+		margin-bottom: 2.5rem;
+	}
+}
+
+.header__nav_link {
+	color: $black;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		color: $yellow;
+	}
+
+	@include transition_color;
+}
+
+.header__burger {
+	position: relative;
+
+	width: 4rem;
+	height: 4rem;
+	margin-left: auto;
+
+	background-color: $gray_2;
+	border-radius: 50%;
+
+	cursor: pointer;
+
+	.body--open_menu & {
+		border: 1px solid $yellow;
+	}
+
+	&:hover {
+		& .header__burger_decor {
+			background-color: $yellow;
+		}
+
+		&::before,
+		&::after {
+			background-color: $yellow;
+		}
+	}
+
+	&::before,
+	&::after {
+		@include transition_all;
+
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		width: 18px;
+		height: 2px;
+
+		background-color: $black;
+	}
+
+	&::before {
+		transform: translate(-50%, calc(-50% - 5px));
+	}
+
+	&::after {
+		transform: translate(-50%, calc(-50% + 5px));
+	}
+
+	.body--open_menu & {
+		&::before {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+
+		&::after {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+	}
+}
+
+.header__burger_decor {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	width: 18px;
+	height: 2px;
+
+	background-color: $black;
+
+	transform: translate(-50%, -50%);
+
+	transition: opacity 0.3s ease;
+
+	.body--open_menu & {
+		opacity: 0;
+	}
+
+	@include transition_background;
+}

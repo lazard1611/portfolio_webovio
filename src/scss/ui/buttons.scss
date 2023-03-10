@@ -1,0 +1,4 @@
+.btn_base {
+	@include btn_style_olive;
+	@include btn_size_normal;
+}

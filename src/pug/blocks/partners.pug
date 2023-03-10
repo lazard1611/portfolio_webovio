@@ -1,0 +1,10 @@
+include ../templates/global-mixins
+
+section.section.partners.js-partners
+	.section_in
+		.partners__wrap
+			ul.partners__list
+				each item in items
+					li.partners__item.js-fade-item
+						.partners__pic
+							img.partners__img(src=`images/${item.img}`, alt=item.alt)

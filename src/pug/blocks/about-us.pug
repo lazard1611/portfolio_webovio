@@ -1,0 +1,24 @@
+include ../templates/mixins/m-rich-text
+include ../templates/mixins/m-feedback-card
+include ../templates/global-mixins
+
+section.section.about_us.js-fade-trigger
+	.section_in.about_us__in
+		.about_us__col
+			+rich_text({
+				mod: false,
+				subtitle: subtitle,
+				title: title,
+				description: description,
+				link: 'More know About us',
+			})
+		.about_us__col.js-fade-item
+			+feedback_card({
+				mod: 'feedback_card--size_mod js-parallax-item',
+				text: text,
+				image: image,
+				name: name,
+				post: post,
+			})
+
+

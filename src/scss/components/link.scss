@@ -1,0 +1,59 @@
+.text_link {
+	@include text;
+	font-weight: 700;
+
+	display: inline-flex;
+	align-items: center;
+	align-content: center;
+
+	line-height: 1;
+
+	color: $gray;
+	transition: color .3s ease;
+
+	.article & {
+		margin: auto 0 0 0;
+	}
+
+	span {
+		position: relative;
+		padding-left: 1rem;
+
+		&:after {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+
+			display: block;
+			width: 100%;
+			height: 1px;
+			background-color: $gray;
+			transition: background-color .3s ease;
+
+			content: '';
+		}
+
+		.get_started__block & {
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+	}
+
+	&:focus,
+	&:hover {
+		color: $yellow;
+		text-decoration: none;
+
+		span:after {
+			background-color: $yellow;
+		}
+	}
+}
+
+.text_link__icon {
+	flex-shrink: 0;
+	width: .6rem;
+	height: 1.2rem;
+
+	color: inherit;
+}
